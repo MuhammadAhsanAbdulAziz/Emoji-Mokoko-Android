@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Emoji Mokoko</string>
+    <string name="buttonColor">#0014FF</string>
+    <string name="bgImage">Bg Image</string>
+    <string name="logo">Logo</string>
+    <string name="wellcomeimage">Well Come Image</string>
+    <string name="watch">watch</string>
+    <string name="SetupTheKeyboard">Setup The Keyboard</string>
+
+
+
+
+
+
+</resources>

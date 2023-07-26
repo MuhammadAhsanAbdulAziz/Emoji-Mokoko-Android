@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="10%p"
+    android:keyHeight="50dp"
+    android:id="@+id/dynamic_emoji_keyboard"
+    >
+    <Row>
+<!--        <Key android:codes="1001" android:keyIcon="@drawable/emoji1"/>-->
+<!--        <Key android:codes="1002" android:keyIcon="@drawable/emoji1"/>-->
+<!--        <Key android:codes="1003" android:keyIcon="@drawable/emoji1"/>-->
+        <Key android:codes="-10" android:keyIcon="@drawable/ic_arrow_back" android:keyWidth="10%p" />
+
+        <!-- Add more emoji keys as needed -->
+    </Row>
+</Keyboard>

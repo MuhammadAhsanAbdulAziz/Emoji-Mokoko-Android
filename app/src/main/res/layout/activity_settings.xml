@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".settings">
+
+    <LinearLayout
+        android:layout_width="316dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="Mokoko Settings"
+            android:textColor="#161616"
+            android:textFontWeight="600"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+
+
+            <ImageView
+                android:layout_width="332dp"
+                android:layout_height="219dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/watchvideo" />
+
+            <LinearLayout
+                android:layout_width="316dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="40dp">
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="#BDD5D4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enable Push Notifications"
+                        android:textColor="#000000"
+                        android:textFontWeight="400"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Receive new updates about the keyboard"
+                        android:textFontWeight="400"
+                        android:textSize="11dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="316dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="#BDD5D4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Send Emojis as stickers"
+                        android:textColor="#000000"
+                        android:textFontWeight="400"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Use Stickers instead of images"
+                        android:textFontWeight="400"
+                        android:textSize="11dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track"
+                    android:layout_marginLeft="40dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="316dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="#BDD5D4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recently used Emojis"
+                        android:textColor="#000000"
+                        android:textFontWeight="400"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Show emojis that have been used recently"
+                        android:textFontWeight="400"
+                        android:textSize="11dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track"
+                    android:layout_marginLeft="40dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="316dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="#BDD5D4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enable Theme Mode"
+                        android:textColor="#000000"
+                        android:textFontWeight="400"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Adapt keyboard color to app used"
+                        android:textFontWeight="400"
+                        android:textSize="11dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track"
+                    android:layout_marginLeft="40dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="314dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/policy" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
