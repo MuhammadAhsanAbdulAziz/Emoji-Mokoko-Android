@@ -32,131 +32,60 @@ public class Custom_Keypaid extends InputMethodService
     private KeyboardView keyboardView;
     private Keyboard keyboard;
     private boolean emojiSectionVisible = false;
-    private List<DataItem> emojies;
     private boolean caps = false;
 
-    private static class DataItem {
-        private int id;
-        private String name;
-        private String Image;
-
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        // Getter and Setter methods for name
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-        public void setImage(String Image) {
-            this.Image = Image;
-        }
-        public String getImage() {
-            return Image;
-        }
-        public String toString() {
-            return "DataItem{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", Image='" + Image + '\'' +
-                    // Add other properties here if needed
-                    '}';
-        }
-    }
-    @Override
+   @Override
     public View onCreateInputView() {
         keyboardView= (KeyboardView) getLayoutInflater().inflate(R.layout.custom_keyboard_layout,null);
         keyboard=new Keyboard(this,R.xml.custom_keypaid);
         keyboardView.setKeyboard(keyboard);
         keyboardView.setOnKeyboardActionListener(this);
 
-        fetchEmojiDataAndAddKeys();
+//        fetchEmojiDataAndAddKeys();
         return keyboardView;
     }
 
-    private void fetchEmojiDataAndAddKeys() {
-        String apiUrl = "https://911d-119-157-77-76.ngrok-free.app/get_emoji";
+//    private void fetchEmojiDataAndAddKeys() {
+//        String apiUrl = "https://2359-119-152-232-150.ngrok-free.app/get_emoji";
+//
+//        AndroidNetworking.initialize(this);
+//        AndroidNetworking.get(apiUrl)
+//                .setPriority(Priority.HIGH)
+//                .build()
+//                .getAsJSONObject(new JSONObjectRequestListener() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        try {
+//                            JSONArray resArray = response.getJSONArray("res");
+//                            if (resArray.length() > 0) {
+//
+//
+//                            } else {
+//                                // Handle the case when the "res" array is empty
+//                                Log.d("Description", "No emoji data found.");
+//                            }
+//
+//                            // Notify the keyboard view that the keyboard has changed and needs to be redrawn
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//
+//
+//                    @Override
+//                    public void onError(ANError anError) {
+//                        anError.printStackTrace();
+//                        Log.e(String.valueOf(anError), "onError: eee...................." );
+//                    }
+//                });
+//    }
 
-        AndroidNetworking.initialize(this);
-        AndroidNetworking.get(apiUrl)
-                .setPriority(Priority.HIGH)
-                .build()
-                .getAsJSONObject(new JSONObjectRequestListener() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray resArray = response.getJSONArray("res");
-                            if (resArray.length() > 0) {
-                                List<DataItem> dataList = parseJsonData(resArray);
-                                emojies= dataList;
-
-                            } else {
-                                // Handle the case when the "res" array is empty
-                                Log.d("Description", "No emoji data found.");
-                            }
-
-                            // Notify the keyboard view that the keyboard has changed and needs to be redrawn
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-
-                    @Override
-                    public void onError(ANError anError) {
-                        anError.printStackTrace();
-                        Log.e(String.valueOf(anError), "onError: eee...................." );
-                    }
-                });
-    }
-
-    private List<DataItem> parseJsonData(JSONArray response) {
-        List<DataItem> dataList = new ArrayList<>();
-
-        try {
-            for (int i = 0; i < response.length(); i++) {
-                JSONObject dataObject = response.getJSONObject(i);
-                DataItem item = new DataItem();
-                item.setId(dataObject.getInt("id"));
-                item.setName(dataObject.getString("title"));
-                item.setImage(dataObject.getString("image"));
-                dataList.add(item);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return dataList;
-    }
-//@Override
-//public View onCreateInputView() {
-//    keyboardView = (KeyboardView) getLayoutInflater().inflate(R.layout.custom_keyboard_layout, null);
-//    keyboard = new Keyboard(this, R.xml.custom_emoji_keypaid);
-//    keyboardView.setKeyboard(keyboard);
-//    keyboardView.setOnKeyboardActionListener(this);
-//    return keyboardView;
-//}
 
     @Override
-    public void onPress(int primaryCode) {
-
-    }
+    public void onPress(int primaryCode) { }
 
     @Override
-    public void onRelease(int primaryCode) {
-
-    }
-
-
+    public void onRelease(int primaryCode) { }
 
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
@@ -165,22 +94,8 @@ public class Custom_Keypaid extends InputMethodService
             emojiSectionVisible = !emojiSectionVisible;
             if (emojiSectionVisible) {
                 keyboard = new Keyboard(this, R.xml.custom_emoji_keypaid);
-                List<Keyboard.Key> keys = keyboard.getKeys();
 
-                // Clear existing keys
-//                keys.clear();
-                for (DataItem dataItem : emojies) {
-                    int id = dataItem.getId();
-                    String name = dataItem.getName();
-                    String img = dataItem.getImage();
-                    Keyboard.Key key = new Keyboard.Key(new Keyboard.Row(keyboard)); // Use the Row constructor
 
-                    key.codes = new int[]{id}; // Set the key code for the emoji
-                    key.label="test";
-
-                    keys.add(key);
-
-                }
                 keyboardView.setKeyboard(keyboard);
 
                 keyboardView.setOnKeyboardActionListener(this);

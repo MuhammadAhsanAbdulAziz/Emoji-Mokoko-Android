@@ -5,12 +5,14 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.8560606060606061" />
         <entry key="app/src/main/res/drawable/btn_style.xml" value="0.176" />
+        <entry key="app/src/main/res/drawable/emogi1.xml" value="0.1245" />
         <entry key="app/src/main/res/drawable/enter.xml" value="0.1695" />
+        <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.1775" />
         <entry key="app/src/main/res/drawable/thumb.xml" value="0.1765" />
         <entry key="app/src/main/res/drawable/track.xml" value="0.1765" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.16875" />
-        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/custom_emoji_keyboard_layout.xml" value="0.1322463768115942" />
         <entry key="app/src/main/res/layout/custom_keyboard_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/custom_keyboard_preview.xml" value="0.1" />
