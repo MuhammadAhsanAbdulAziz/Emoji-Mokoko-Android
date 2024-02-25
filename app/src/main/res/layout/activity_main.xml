@@ -1,61 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Splash_screen"
+    android:background="@drawable/background"
     android:gravity="center"
-    >
+    android:orientation="vertical"
+    tools:context=".views.Splash_screen">
 
     <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo" />
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/background"
-        android:contentDescription="@string/bgImage"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Welcome To"
+        android:textAlignment="center"
+        android:textColor="#a2a2a2" />
 
-
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="86dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="84dp"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/logo"
-        tools:ignore="ImageContrastCheck" />
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
-    <ImageView
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/helloimg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Emoji Mokoko"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+<!--    <VideoView-->
+<!--        android:scaleX="1.7"-->
+<!--        android:scaleY="1.5"-->
+<!--        android:layout_marginVertical="60dp"-->
+<!--        android:layout_marginHorizontal="10dp"-->
+<!--        android:id="@+id/idVideoView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"/>-->
+
+    <ImageButton
+        android:id="@+id/closebtn"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_close_24"/>
+    <VideoView
+        android:layout_marginVertical="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:id="@+id/idVideoView2"
         android:layout_width="match_parent"
-        android:layout_height="83dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="192dp"
-        android:src="@drawable/wellcomdiv"
-        android:contentDescription="@string/wellcomeimage"/>
+        android:layout_height="200dp"/>
 
-    <ImageView
-        android:layout_width="319dp"
-        android:layout_height="274dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="298dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/watch"
-        android:contentDescription="@string/watch"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Watch The Setup Tutorial Video"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:paddingHorizontal="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/number1"
+            android:textColor="#767676" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/number2"
+            android:textColor="#767676" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/number3"
+            android:textColor="#767676" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btnGoSetting"
-        android:layout_width="312dp"
+        android:id="@+id/btnGoMobileSetting"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="611dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/btn_style"
+        android:padding="15dp"
         android:text="@string/SetupTheKeyboard"
-        android:stateListAnimator="@null"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="@null" />
 
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/btn_style"
+        android:layout_marginVertical="10dp"
+        android:padding="15dp"
+        android:text="Settings"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="@null" />
 
-        />
-
-
-</RelativeLayout>
+</LinearLayout>

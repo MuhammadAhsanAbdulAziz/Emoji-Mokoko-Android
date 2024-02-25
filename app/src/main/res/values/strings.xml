@@ -1,15 +1,16 @@
 <resources>
-    <string name="app_name">Emoji Mokoko</string>
+    <string name="app_name">Mokoko Keyboard</string>
     <string name="buttonColor">#0014FF</string>
     <string name="bgImage">Bg Image</string>
     <string name="logo">Logo</string>
     <string name="wellcomeimage">Well Come Image</string>
     <string name="watch">watch</string>
     <string name="SetupTheKeyboard">Setup The Keyboard</string>
-
-
-
-
+    <string name="number2">2. Enable the Mokoko Keyboard</string>
+    <string name="number1">1. Click Setup the Keyboard</string>
+    <string name="number3">3. That\'s it</string>
+    <string name="accessibility_service_label">mokoko\n</string>
+    <string name="accessibility_service_description">mokoko\n\n</string>
 
 
 </resources>

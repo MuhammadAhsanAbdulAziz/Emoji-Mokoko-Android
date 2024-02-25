@@ -1,4 +1,4 @@
-package com.example.emojimokoko;
+package com.example.emojimokoko.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,11 +10,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.VideoView;
 
+import com.example.emojimokoko.R;
 import com.example.emojimokoko.utils.SqliteManager;
+import com.example.emojimokoko.utils.UtilManager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -25,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private final SqliteManager sqliteManager = new SqliteManager(this);
     private static final String PREFS_NAME = "MyPrefsFile";
     private static final String ADD_EMOJI_FLAG = "AddEmojiFlag";
-    Button  mobilesetting,setting;
+    ImageButton closeBtn;
+    Button mobileSetting,setting;
     VideoView videoView;
 
     @Override
@@ -34,9 +39,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        mobilesetting = findViewById(R.id.btnGoMobileSetting);
+        mobileSetting = findViewById(R.id.btnGoMobileSetting);
         setting = findViewById(R.id.setting);
         videoView = findViewById(R.id.idVideoView2);
+        closeBtn = findViewById(R.id.closebtn);
         Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.test);
         videoView.setVideoURI(uri);
         videoView.start();
@@ -47,14 +53,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        UtilManager.setDefaults("hehe",null,getApplicationContext());
+
+
         videoView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FullscreenVideoActivity.class);
-                intent.putExtra("videoResourceId", R.raw.test);
-                intent.putExtra("activity", "main");
-                startActivity(intent);
-                finish();
+                ViewGroup.LayoutParams layoutParams = videoView.getLayoutParams();
+                layoutParams.height = 1000;
+                videoView.setLayoutParams(layoutParams);
+                closeBtn.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ViewGroup.LayoutParams layoutParams = videoView.getLayoutParams();
+                layoutParams.height = 350;
+                videoView.setLayoutParams(layoutParams);
+                closeBtn.setVisibility(View.GONE);
             }
         });
 
@@ -63,11 +82,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent nextScreen = new Intent(MainActivity.this, settings.class);
                 startActivity(nextScreen);
-                finish();
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
-        mobilesetting.setOnClickListener(new View.OnClickListener() {
+        mobileSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     Intent intent = new Intent(Settings.ACTION_INPUT_METHOD_SETTINGS);
@@ -102,5 +121,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return rawResourceIds;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        videoView.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        videoView.start();
     }
 }

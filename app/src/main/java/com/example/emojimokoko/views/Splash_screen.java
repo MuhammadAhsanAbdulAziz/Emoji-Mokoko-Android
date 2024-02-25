@@ -1,4 +1,4 @@
-package com.example.emojimokoko;
+package com.example.emojimokoko.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-import java.util.Objects;
+import com.example.emojimokoko.R;
 
 public class Splash_screen extends AppCompatActivity {
 

@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-android:gravity="center_horizontal"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".settings">
+    tools:context=".views.settings">
 
     <LinearLayout
         android:layout_width="316dp"
@@ -20,7 +20,7 @@ android:gravity="center_horizontal"
             android:id="@+id/backBtn"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back" />
+            android:src="@drawable/baseline_arrow_back_ios_24" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,17 +40,29 @@ android:gravity="center_horizontal"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/closebtnn"
+                android:background="@android:color/transparent"
+                android:visibility="gone"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_marginHorizontal="80dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_close_24"/>
+            <VideoView
+                android:layout_marginVertical="30dp"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/idVideoView22"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
 
-
-
-
-            <ImageView
-                android:layout_width="332dp"
-                android:layout_height="219dp"
-                android:layout_marginTop="50dp"
-                android:src="@drawable/watchvideo" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Watch The Setup Tutorial Video"
+                android:textColor="@color/black"
+                android:gravity="center"/>
 
             <LinearLayout
                 android:layout_width="316dp"
@@ -90,43 +102,43 @@ android:gravity="center_horizontal"
                     app:track="@drawable/track" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="316dp"
-                android:layout_height="46dp"
-                android:layout_marginTop="10dp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="316dp"-->
+<!--                android:layout_height="46dp"-->
+<!--                android:layout_marginTop="10dp">-->
 
-                <LinearLayout
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:cardBackgroundColor="#BDD5D4">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="210dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    app:cardBackgroundColor="#BDD5D4">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Send Emojis as stickers"
-                        android:textColor="#000000"
-                        android:textFontWeight="400"
-                        android:textSize="16dp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Send Emojis as stickers"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:textFontWeight="400"-->
+<!--                        android:textSize="16dp" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Use Stickers instead of images"
-                        android:textFontWeight="400"
-                        android:textSize="11dp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:text="Use Stickers instead of images"-->
+<!--                        android:textFontWeight="400"-->
+<!--                        android:textSize="11dp" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-                <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/switch2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:thumb="@drawable/thumb"
-                    app:track="@drawable/track"
-                    android:layout_marginLeft="40dp" />
-            </LinearLayout>
+<!--                <androidx.appcompat.widget.SwitchCompat-->
+<!--                    android:id="@+id/switch2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:thumb="@drawable/thumb"-->
+<!--                    app:track="@drawable/track"-->
+<!--                    android:layout_marginLeft="40dp" />-->
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="316dp"

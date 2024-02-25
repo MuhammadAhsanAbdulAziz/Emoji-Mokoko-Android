@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#2196F3</color>
     <color name="track">#34C759</color>
-
+    <color name="transparent">#0035383F</color>
+    <color name="iconColor">#dae6f7</color>
+    <color name="keyboardBackgroundColor">#f0fef2</color>
 
 </resources>
